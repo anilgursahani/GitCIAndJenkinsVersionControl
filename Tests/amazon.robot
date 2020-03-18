@@ -38,7 +38,8 @@ Logged Out User Can View A Product
   AmazonApp.Select Product From Search Results
   Log  Test Completed   # Adding this line just for purposes of practicing commit, pull and push.
 
-
+Feature 1
+  Log Feature 1 Test
 
 
 
