@@ -32,6 +32,7 @@ Logged Out User Can View A Product
   [Tags]  View
   AmazonApp.Search For Product  ${Product}
   AmazonApp.Select Product From Search Results
+  Log  Test Completed   # Adding this line just for purposes of practicing commit, pull and push.
 
 
 

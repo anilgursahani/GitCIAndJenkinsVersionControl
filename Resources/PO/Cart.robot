@@ -7,3 +7,4 @@ Verify Product Added
 
 Proceed to Checkout
     Click Link  id=hlb-ptc-btn-native
+    Wait Until Page Contains  Some Text To Verify
