@@ -25,6 +25,10 @@ Logged Out User Can Search For Products
   [Documentation]  A user that is logged out should be able to search for products
   [Tags]  Smoke  Prodcuts
   AmazonApp.Search For Product  ${Product}
+  
+  
+Logged Out User Can Add Product To a Cart
+  Log  Logged out user can add product to a cart
 
 
 Logged Out User Can View A Product
