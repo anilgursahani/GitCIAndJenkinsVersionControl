@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.2 on win32)" generated="20200317 19:32:26.417" rpa="false">
+<suite id="s1" name="Amazon" source="C:\Development\GitHub2\GitCIAndJenkinsVersionControl\Tests\amazon.robot">
+<test id="s1-t1" name="Logged Out User Can View A Product">
+<kw name="Do Setup" library="CommonWeb" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200317 19:32:26.765" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200317 19:32:26.764" endtime="20200317 19:32:32.259"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:26.764" endtime="20200317 19:32:32.260"></status>
+</kw>
+<kw name="Search For Product" library="AmazonApp">
+<arguments>
+<arg>${Product}</arg>
+</arguments>
+<kw name="Go To Amazon Page" library="AmazonApp">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Go to Amazon page</arg>
+</arguments>
+<msg timestamp="20200317 19:32:32.263" level="INFO">Go to Amazon page</msg>
+<status status="PASS" starttime="20200317 19:32:32.263" endtime="20200317 19:32:32.263"></status>
+</kw>
+<kw name="Load" library="LandingPage">
+<arguments>
+<arg>${AmazonURL}</arg>
+</arguments>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200317 19:32:32.264" level="INFO">Opening url 'http://www.amazon.com'</msg>
+<status status="PASS" starttime="20200317 19:32:32.264" endtime="20200317 19:32:33.763"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:32.263" endtime="20200317 19:32:33.764"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Sell</arg>
+</arguments>
+<status status="PASS" starttime="20200317 19:32:33.765" endtime="20200317 19:32:34.301"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:33.764" endtime="20200317 19:32:34.301"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:32.262" endtime="20200317 19:32:34.301"></status>
+</kw>
+<kw name="Search for Product" library="TopNav">
+<arguments>
+<arg>${SEARCH_TERM}</arg>
+</arguments>
+<kw name="Enter Search Term" library="TopNav">
+<arguments>
+<arg>${SEARCH_TERM}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${searchTextBox}</arg>
+<arg>${SEARCH_TERM}</arg>
+</arguments>
+<msg timestamp="20200317 19:32:34.303" level="INFO">Typing text 'Hotwheels' into text field 'id:twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20200317 19:32:34.302" endtime="20200317 19:32:34.746"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:34.302" endtime="20200317 19:32:34.746"></status>
+</kw>
+<kw name="Submit Search" library="TopNav">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${searchButton}</arg>
+</arguments>
+<msg timestamp="20200317 19:32:34.748" level="INFO">Clicking button 'css:input[type='submit'].nav-input'.</msg>
+<status status="PASS" starttime="20200317 19:32:34.748" endtime="20200317 19:32:36.008"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:34.747" endtime="20200317 19:32:36.009"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:34.301" endtime="20200317 19:32:36.009"></status>
+</kw>
+<kw name="Verify Search Completed" library="SearchResults">
+<arguments>
+<arg>${SEARCH_TERM}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>results for "${SEARCH_TERM}"</arg>
+</arguments>
+<status status="PASS" starttime="20200317 19:32:36.010" endtime="20200317 19:32:36.164"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:36.009" endtime="20200317 19:32:36.164"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:32.261" endtime="20200317 19:32:36.164"></status>
+</kw>
+<kw name="Select Product From Search Results" library="AmazonApp">
+<kw name="Select Product from Search Results" library="SearchResults">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>${ProductsSelectedSelector}</arg>
+</arguments>
+<assign>
+<var>${webElements}</var>
+</assign>
+<msg timestamp="20200317 19:32:36.303" level="INFO">${webElements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="1abe333c6efbec0837bb193063a62c82", element="a69b7def-9acf-4ace-93ee-f1afea0eb054")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20200317 19:32:36.166" endtime="20200317 19:32:36.304"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>${webElements}</arg>
+</arguments>
+<msg timestamp="20200317 19:32:36.305" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="1abe333c6efbec0837bb193063a62c82", element="a69b7def-9acf-4ace-93ee-f1afea0eb054")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1abe333c6efbec0837bb193063a62c82", element="ce099275-1db5-4c58-818f-589427ca595d")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="1abe333c6efbec0837bb193063a62c82", element="76423feb-53e3-48bc-9a2c-5891855a5c5a")&gt;]</msg>
+<status status="PASS" starttime="20200317 19:32:36.304" endtime="20200317 19:32:36.305"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${webElements}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${webElement}</var>
+</assign>
+<msg timestamp="20200317 19:32:36.307" level="INFO">${webElement} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1abe333c6efbec0837bb193063a62c82", element="a69b7def-9acf-4ace-93ee-f1afea0eb054")&gt;</msg>
+<status status="PASS" starttime="20200317 19:32:36.306" endtime="20200317 19:32:36.307"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${webElement}</arg>
+</arguments>
+<msg timestamp="20200317 19:32:36.308" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1abe333c6efbec0837bb193063a62c82", element="a69b7def-9acf-4ace-93ee-f1afea0eb054")&gt;'.</msg>
+<status status="PASS" starttime="20200317 19:32:36.308" endtime="20200317 19:32:37.160"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:36.165" endtime="20200317 19:32:37.161"></status>
+</kw>
+<kw name="Verify Add To Cart Button Appears" library="Product">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${AddToCartButton}</arg>
+<arg>timeout=10 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20200317 19:32:37.162" endtime="20200317 19:32:39.486"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:37.161" endtime="20200317 19:32:39.486"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:36.165" endtime="20200317 19:32:39.487"></status>
+</kw>
+<kw name="Do Teardown" library="CommonWeb" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200317 19:32:39.488" endtime="20200317 19:32:41.890"></status>
+</kw>
+<status status="PASS" starttime="20200317 19:32:39.487" endtime="20200317 19:32:41.890"></status>
+</kw>
+<doc>A looged out user should be able to view a product</doc>
+<tags>
+<tag>View</tag>
+</tags>
+<status status="PASS" starttime="20200317 19:32:26.754" endtime="20200317 19:32:41.892" critical="yes"></status>
+</test>
+<doc>Learn how to write a Robot Frameworks Script. Documentation in settings starts at first column</doc>
+<status status="PASS" starttime="20200317 19:32:26.419" endtime="20200317 19:32:41.898"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">View</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Amazon">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
