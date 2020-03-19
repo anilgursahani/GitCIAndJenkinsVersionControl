@@ -36,7 +36,7 @@ Logged Out User Can View A Product
   [Tags]  View
   AmazonApp.Search For Product  ${Product}
   AmazonApp.Select Product From Search Results
-  
+
 
 Feature 1
   Log   Feature 1 Test
