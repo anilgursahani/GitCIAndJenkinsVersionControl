@@ -17,7 +17,7 @@ Documentation  Learn how to write a Robot Frameworks Script.  Documentation in s
 ${url} =  http://www.amazon.com
 ${browser} =  chrome
 ${elements}    css=div.sb_2sPLTAOF
-${Product} =  Hotwheels
+${Product} =  Glue gun
 
 *** Test Cases ***
 
@@ -39,7 +39,7 @@ Logged Out User Can View A Product
   Log  Test Completed   # Adding this line just for purposes of practicing commit, pull and push.
 
 Feature 1
-  Log Feature 1 Test
+  Log   Feature 1 Test
 
 
 
