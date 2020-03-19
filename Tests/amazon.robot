@@ -23,7 +23,7 @@ ${Product} =  Glue gun
 
 Logged Out User Can Search For Products
   [Documentation]  A user that is logged out should be able to search for products
-  [Tags]  Smoke  Prodcuts
+  [Tags]  Smoke  Products
   AmazonApp.Search For Product  ${Product}
   
   
@@ -36,14 +36,10 @@ Logged Out User Can View A Product
   [Tags]  View
   AmazonApp.Search For Product  ${Product}
   AmazonApp.Select Product From Search Results
-  Log  Test Completed   # Adding this line just for purposes of practicing commit, pull and push.
+  
 
 Feature 1
   Log   Feature 1 Test
-
-
-
-
 
 
 Non smoke Test
