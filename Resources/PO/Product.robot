@@ -8,6 +8,12 @@ ${AddToCartButton} =  id:add-to-cart-button
 
 *** Keywords ***
 
-Verify Add To Cart Button Appears
+Wait For Cart Button to Appear
 
   Wait Until Page Contains Element  ${AddToCartButton}   timeout=10 seconds
+
+Add Product to Cart
+  Wait For Cart Button to Appear
+  Click Button  ${AddToCartButton}
+
+

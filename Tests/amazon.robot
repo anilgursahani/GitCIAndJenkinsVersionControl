@@ -28,11 +28,18 @@ Logged Out User Can Search For Products
   
   
 Logged Out User Can Add Product To a Cart
-  Log  Logged out user can add product to a cart
+  [Documentation]  A logged out user should be able to add a product to a cart
+  [Tags]   Cart
+  AmazonApp.Search For Product  ${Product}
+  AmazonApp.Select Product From Search Results
+  AmazonApp.Add Product to Cart
+  ${numProducts} =  AmazonApp.Get Count Products in Cart
+  Log  Num Products in cart are ${numProducts}
+  Should Be Equal As Integers  ${numProducts}  1
 
 
 Logged Out User Can View A Product
-  [Documentation]  A looged out user should be able to view a product
+  [Documentation]  A logged out user should be able to view a product
   [Tags]  View
   AmazonApp.Search For Product  ${Product}
   AmazonApp.Select Product From Search Results

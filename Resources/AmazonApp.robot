@@ -4,6 +4,7 @@ Resource  PO/LandingPage.robot
 Resource  PO/TopNav.robot
 Resource  PO/SearchResults.robot
 Resource  PO/Product.robot
+Resource  PO/Cart.robot
 
 
 *** Variables ***
@@ -25,7 +26,16 @@ Search For Product
 
 Select Product From Search Results
   SearchResults.Select Product From Search Results
-  Product.Verify Add To Cart Button Appears
+  Product.Wait For Cart Button to Appear
+
+Add Product to Cart
+  Product.Add Product to Cart
+  Cart.Verify Product Added
+
+
+Get Count Products in Cart
+  ${NumProducts} =  Cart.Get Count Products
+  [Return]  ${NumProducts}
 
 Code to IntegrateLater on
   ${elements}    css=div.sb_2sPLTAOF
